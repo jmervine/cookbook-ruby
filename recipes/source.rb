@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+#
+# Cookbook Name:: ruby
+# Recipe:: source
+#
 
 # helper method
 # TODO: move out of recipe
