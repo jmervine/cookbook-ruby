@@ -17,6 +17,7 @@ else
 end
 
 include_recipe "build-essential"
+include_recipe "libyaml"
 
 pkgs.each do |pkg|
   package pkg

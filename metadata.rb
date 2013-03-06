@@ -7,4 +7,5 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 recipe           "ruby::source", "Builds ruby source."
 version          "0.1.0"
 depends          "build-essential"
+depends          "libyaml"
 depends          "yum"
