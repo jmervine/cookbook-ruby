@@ -2,8 +2,12 @@
 
 # Requirements
 
-    build-essentials -- [http://community.opscode.com/cookbooks/build-essential]
-    yum              -- [http://community.opscode.com/cookbooks/yum]
+* [build-essentials](http://community.opscode.com/cookbooks/build-essential)
+* [yum](http://community.opscode.com/cookbooks/yum)
+
+## This has been tested on:
+
+* CentOS 6.2
 
 # Usage
 

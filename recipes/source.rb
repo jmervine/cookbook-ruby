@@ -9,19 +9,19 @@ end
 case node['platform_family']
 when "rhel"
   include_recipe "yum::epel" # if node['platform_version'].to_i < 6
-  pkgs = %w{ libxslt-devel libtool libyaml libyaml-devel libxml2-devel gdbm-devel libffi-devel zlib-devel openssl-devel readline-devel curl-devel pcre-devel }
+  pkgs = %w{ libxslt-devel libtool libxml2-devel gdbm-devel libffi-devel zlib-devel openssl-devel readline-devel curl-devel pcre-devel }
 when "debian"
   pkgs = %w{ libxslt-dev libyaml-dev libxml2-dev libgdbm-dev libffi-dev zlib1g-dev libssl-dev libreadline-dev libcurl4-openssl-dev libpcre3-dev }
 else
   return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe"
 end
 
-include_recipe "build-essential"
-include_recipe "libyaml"
-
 pkgs.each do |pkg|
   package pkg
 end
+
+include_recipe "build-essential"
+include_recipe "libyaml::source" if node['platform_family'] == "rhel"
 
 @defaults = {
   :ruby_version     => "1.9.3-p392",
