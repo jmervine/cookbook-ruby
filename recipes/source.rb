@@ -79,7 +79,7 @@ end
 
 execute "tar --no-same-owner -xzf #{gtar}" do
   cwd ssrc
-  creates "#{ssrc}/rubygems-#{gvar}"
+  creates "#{ssrc}/rubygems-#{gver}"
 end
 
 execute "install rubygems" do
