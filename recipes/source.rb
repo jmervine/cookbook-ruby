@@ -8,8 +8,8 @@ end
 
 case node['platform_family']
 when "rhel"
-  include_recipe "yum::epel" if node['platform_version'].to_i < 6
-  pkgs = %w{ libxslt-devel libyaml-devel libxml2-devel gdbm-devel libffi-devel zlib-devel openssl-devel readline-devel curl-devel pcre-devel }
+  include_recipe "yum::epel" # if node['platform_version'].to_i < 6
+  pkgs = %w{ libxslt-devel libtool libyaml libyaml-devel libxml2-devel gdbm-devel libffi-devel zlib-devel openssl-devel readline-devel curl-devel pcre-devel }
 when "debian"
   pkgs = %w{ libxslt-dev libyaml-dev libxml2-dev libgdbm-dev libffi-dev zlib1g-dev libssl-dev libreadline-dev libcurl4-openssl-dev libpcre3-dev }
 else
