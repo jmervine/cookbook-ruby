@@ -38,11 +38,10 @@ ddir = fetch_config(:destination_dir)
 
 rtar = "ruby-#{rver}.tar.gz"
 gtar = "rubygems-#{gver}.tgz"
-rurl = "#{sloc}/ruby-#{rver}.tar.gz"
 
 ## ruby
 remote_file "#{ssrc}/#{rtar}" do
-  source "#{ssrc}/#{rtar}"
+  source "#{sloc}/#{rtar}"
   mode 0644
   action :create_if_missing
 end
