@@ -48,7 +48,7 @@ end
 
 execute "tar --no-same-owner -xzf #{rtar}" do
   cwd ssrc
-  creates "#{ssrc}/ruby-#{rvar}"
+  creates "#{ssrc}/ruby-#{rver}"
 end
 
 execute "configure ruby" do
