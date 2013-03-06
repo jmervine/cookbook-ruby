@@ -42,7 +42,7 @@ rurl = "#{sloc}/ruby-#{rver}.tar.gz"
 
 ## ruby
 remote_file "#{ssrc}/#{rtar}" do
-  source surl
+  source "#{ssrc}/#{rtar}"
   mode 0644
   action :create_if_missing
 end
