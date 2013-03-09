@@ -8,6 +8,7 @@
 ## This has been tested on:
 
 * CentOS 6.2
+* CentOS 6.3
 * Ubuntu 10.04.4 LTS (lucid64)
 
 # Usage
@@ -21,7 +22,7 @@
         // defaults.
         "build_essential": {},
 
-        // Include autoconf recipe.
+        // Include ruby recipe.
         "run_list": [ "recipe[ruby::source]" ]
     }
 

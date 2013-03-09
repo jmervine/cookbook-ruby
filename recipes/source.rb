@@ -4,12 +4,6 @@
 # Recipe:: source
 #
 
-# helper method
-# TODO: move out of recipe
-def fetch_config key
-  (node['ruby'][key.to_s] || @defaults[key]) rescue @defaults[key]
-end
-
 case node['platform_family']
 when "rhel"
   include_recipe "yum::epel" # if node['platform_version'].to_i < 6
@@ -27,19 +21,11 @@ end
 include_recipe "build-essential"
 include_recipe "libyaml::source" if node['platform_family'] == "rhel"
 
-@defaults = {
-  :ruby_version     => "1.9.3-p392",
-  :rubygems_version => "1.8.24",
-  :source_location  => "http://ftp.ruby-lang.org/pub/ruby/1.9",
-  :source_cache_dir => "/usr/local/src",
-  :destination_dir  => "/usr/local/bin"
-}
-
-rver = fetch_config(:ruby_version)
-gver = fetch_config(:rubygems_version)
-sloc = fetch_config(:source_location)
-ssrc = fetch_config(:source_cache_dir)
-ddir = fetch_config(:destination_dir)
+rver = node['ruby']['ruby_version']
+gver = node['ruby']['rubygems_version']
+sloc = node['ruby']['source_location']
+ssrc = node['ruby']['source_cache_dir']
+ddir = node['ruby']['destination_dir']
 
 rtar = "ruby-#{rver}.tar.gz"
 gtar = "rubygems-#{gver}.tgz"
