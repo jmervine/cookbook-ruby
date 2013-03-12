@@ -3,9 +3,6 @@
 This cookbook can be included using Berkshelf or another library management tool by adding the following:
 
     # Berkshelf example
-    site "https://api.opscode.com/organizations/rubyops"
-
-    # ... or ...
     cookbook "COOKBOOK_NAME", git: "git://github.com/rubyops/cookbook-COOKBOOK_NAME.git", branch: "master"
 
 # Requirements
